@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Registration no:</b>
+  <%= @user.registration_no %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @user.title %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Middle name:</b>
+  <%= @user.middle_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <b>Official dob:</b>
+  <%= @user.official_dob %>
+</p>
+
+<p>
+  <b>Personnel dob:</b>
+  <%= @user.personnel_dob %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @user.nationality %>
+</p>
+
+<p>
+  <b>Religion:</b>
+  <%= @user.religion %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @user.category %>
+</p>
+
+<p>
+  <b>Identification:</b>
+  <%= @user.identification %>
+</p>
+
+<p>
+  <b>Blood group:</b>
+  <%= @user.blood_group %>
+</p>
+
+<p>
+  <b>Known languages:</b>
+  <%= @user.known_languages %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @user.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

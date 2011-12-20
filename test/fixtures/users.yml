@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  registration_no: 1
+  title: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  gender: MyString
+  official_dob: 2011-12-21
+  personnel_dob: 2011-12-21
+  nationality: MyString
+  religion: MyString
+  category: MyString
+  identification: MyText
+  blood_group: MyString
+  known_languages: MyText
+  password: MyString
+
+two:
+  registration_no: 1
+  title: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  gender: MyString
+  official_dob: 2011-12-21
+  personnel_dob: 2011-12-21
+  nationality: MyString
+  religion: MyString
+  category: MyString
+  identification: MyText
+  blood_group: MyString
+  known_languages: MyText
+  password: MyString
