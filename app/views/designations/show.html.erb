@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @designation.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @designation.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_designation_path(@designation) %> |
+<%= link_to 'Back', designations_path %>

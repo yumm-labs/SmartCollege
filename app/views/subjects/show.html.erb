@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @subject.code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @subject.description %>
+</p>
+
+<p>
+  <b>Contact person:</b>
+  <%= @subject.contact_person %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @subject.department %>
+</p>
+
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>

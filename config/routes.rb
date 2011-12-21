@@ -1,4 +1,20 @@
 SmartCollege::Application.routes.draw do
+  resources :subject_categories
+
+  resources :course_subjects
+
+  resources :designations
+
+  resources :department_staffs
+
+  resources :institutes
+
+  resources :departments
+
+  resources :courses
+
+  resources :subjects
+
   resources :users
 
   # The priority is based upon order of creation:

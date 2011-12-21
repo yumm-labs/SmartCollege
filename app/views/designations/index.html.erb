@@ -1,0 +1,25 @@
+<h1>Listing designations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @designations.each do |designation| %>
+  <tr>
+    <td><%= designation.name %></td>
+    <td><%= designation.description %></td>
+    <td><%= link_to 'Show', designation %></td>
+    <td><%= link_to 'Edit', edit_designation_path(designation) %></td>
+    <td><%= link_to 'Destroy', designation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Designation', new_designation_path %>

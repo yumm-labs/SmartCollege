@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  code: MyString
+  description: MyText
+  no_of_years: 1
+  contact_person: 
+
+two:
+  name: MyString
+  code: MyString
+  description: MyText
+  no_of_years: 1
+  contact_person: 

@@ -12,10 +12,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :nationality
       t.string :religion
       t.string :category
+      t.string :sub_category
       t.text :identification
       t.string :blood_group
       t.text :known_languages
       t.string :password
+      t.string :known_diseases
 
       t.timestamps
     end

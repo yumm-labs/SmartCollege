@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course: 
+  subject: 
+  credits: 1
+  specific_code: MyString
+  year: 1
+  semester: 1
+  subject_category: 
+
+two:
+  course: 
+  subject: 
+  credits: 1
+  specific_code: MyString
+  year: 1
+  semester: 1
+  subject_category: 
