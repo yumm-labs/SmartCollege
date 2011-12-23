@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>edge</title>
-  <%#= stylesheet_link_tag    "application" %>
-  <%#= javascript_include_tag "application" %>
-  <%#= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+		<title>edge</title>
+		<%#= stylesheet_link_tag    "application" %>
+		<%#= javascript_include_tag "application" %>
+		<%#= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= content_tag( :p, link_to( 'Logout', logout_url ) ) if user_signed_in? %>
+		<p class="notice">
+			<%= notice %>
+		</p>
+		<p class="alert">
+			<%= alert %>
+		</p>
+		<%= yield %>
+	</body>
 </html>
