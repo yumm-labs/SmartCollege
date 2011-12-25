@@ -1,0 +1,34 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @institute.name
+%p
+  %b Code:
+  = @institute.code
+%p
+  %b Description:
+  = @institute.description
+%p
+  %b Grade:
+  = @institute.grade
+%p
+  %b Caption:
+  = @institute.caption
+%p
+  %b Logo:
+  = @institute.logo
+%p
+  %b Address:
+  = @institute.address
+%p
+  %b Contact person:
+  = @institute.contact_person
+%p
+  %b Email:
+  = @institute.email
+%p
+  %b Phone:
+  = @institute.phone
+= link_to 'Edit', edit_institute_path(@institute)
+|
+\#{link_to 'Back', institutes_path}

@@ -11,6 +11,7 @@ gem 'haml'
 
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
@@ -28,14 +29,16 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
+group :development do
 # To use debugger
- gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
 
 group :test do
-  # Pretty printed test output
+# Pretty printed test output
   gem 'turn', :require => false
 end
 
-
 #	==== metric_fu ====  Code metrics
-#   ==== 

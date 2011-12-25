@@ -3,7 +3,8 @@ class InstitutesController < ApplicationController
   # GET /institutes.json
   def index
     @institutes = Institute.all
-
+    @institute ||= Institute.new
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @institutes }
@@ -21,16 +22,16 @@ class InstitutesController < ApplicationController
     end
   end
 
-  # GET /institutes/new
-  # GET /institutes/new.json
-  def new
-    @institute = Institute.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @institute }
-    end
-  end
+  # # GET /institutes/new
+  # # GET /institutes/new.json
+  # def new
+    # @institute = Institute.new
+# 
+    # respond_to do |format|
+      # format.html # new.html.erb
+      # format.json { render json: @institute }
+    # end
+  # end
 
   # GET /institutes/1/edit
   def edit
@@ -44,10 +45,11 @@ class InstitutesController < ApplicationController
 
     respond_to do |format|
       if @institute.save
-        format.html { redirect_to @institute, notice: 'Institute was successfully created.' }
-        format.json { render json: @institute, status: :created, location: @institute }
+        format.html { redirect_to institutes_url, notice: 'Institute was successfully created.' }
+        format.json { render json: institutes_url, status: :created, location: @institute }
       else
-        format.html { render action: "new" }
+        @institutes = Institute.all
+        format.html{ render :action => :index }
         format.json { render json: @institute.errors, status: :unprocessable_entity }
       end
     end
