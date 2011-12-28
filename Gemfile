@@ -39,6 +39,14 @@ end
 group :test do
 # Pretty printed test output
   gem 'turn', :require => false
+  gem 'cucumber', '~> 1.1.4'
+
+# Cucumber - http://jonathanhui.com/ruby-rails-3-testing-cucumber
+# Cucumber & Capypara - http://www.allenwei.cn/cucumber-capybara-what-we-need-for-rails-integration-test/
+# Fork the tests - https://github.com/sporkrb/spork
+# Watchr - automated testing
+
+# Rails3 testing overviews - http://blog.mattheworiordan.com/post/4701529828/full-stack-integration-testing-with-rails-3-cucumber
 end
 
 #	==== metric_fu ====  Code metrics
