@@ -2,6 +2,10 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
+# Following require is to fix --- undefined method `have_many'
+# This will be fixed in shoulda 3 version
+require 'shoulda/rails' 
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #

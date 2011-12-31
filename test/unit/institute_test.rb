@@ -1,12 +1,15 @@
 require 'test_helper'
 
-# class InstituteTest < ActiveSupport::TestCase
-class InstituteTest < Test::Unit::TestCase
+class InstituteTest < ActiveSupport::TestCase
 
   should have_many(:departments)
 
-  # test "the truth" do
-    # # assert true
-  # end
+  should "return its full name" do
+    assert_equal 'John Doe', "John"
+  end
+
+# test "the truth" do
+# # assert true
+# end
 
 end
