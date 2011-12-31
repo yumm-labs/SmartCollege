@@ -16,9 +16,10 @@ one:
   blood_group: MyString
   known_languages: MyText
   password: MyString
+  email: email1@gmail.com
 
 two:
-  registration_no: 1
+  registration_no: 2
   title: MyString
   first_name: MyString
   middle_name: MyString
@@ -33,3 +34,4 @@ two:
   blood_group: MyString
   known_languages: MyText
   password: MyString
+  email: email2@gmail.com

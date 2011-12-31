@@ -1,5 +1,9 @@
 SmartCollege::Application.routes.draw do
 
+  resources :semester_patterns
+
+  resources :course_durations
+
   devise_for :users do
     root :to => "users#index"
     get "/login" => "devise/sessions#new"
@@ -9,11 +13,7 @@ SmartCollege::Application.routes.draw do
 
   resources :subject_categories
 
-  resources :course_subjects
-
   resources :designations
-
-  resources :department_staffs
 
   resources :institutes
 

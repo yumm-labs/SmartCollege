@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @course_duration.name %>
+</p>
+
+<p>
+  <b>No of years:</b>
+  <%= @course_duration.no_of_years %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @course_duration.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_duration_path(@course_duration) %> |
+<%= link_to 'Back', course_durations_path %>

@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <%= label_tag "Departments"%>  
+  <%= f.collection_select(:department_id, Department.all, :id, :name,{}) %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -25,11 +27,11 @@
   </div>
   <div class="field">
     <%= f.label :contact_person %><br />
-    <%= f.text_field :contact_person %>
+    <%#= f.text_field :contact_person %>
   </div>
   <div class="field">
     <%= f.label :department %><br />
-    <%= f.text_field :department %>
+    <%#= f.text_field :department %>
   </div>
   <div class="actions">
     <%= f.submit %>

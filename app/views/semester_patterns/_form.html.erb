@@ -1,0 +1,29 @@
+<%= form_for(@semester_pattern) do |f| %>
+  <% if @semester_pattern.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@semester_pattern.errors.count, "error") %> prohibited this semester_pattern from being saved:</h2>
+
+      <ul>
+      <% @semester_pattern.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :no_of_semesters %><br />
+    <%= f.number_field :no_of_semesters %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.number_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

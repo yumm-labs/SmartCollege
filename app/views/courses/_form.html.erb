@@ -1,37 +1,51 @@
 <%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :code %><br />
-    <%= f.text_field :code %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :no_of_years %><br />
-    <%= f.number_field :no_of_years %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_person %><br />
-    <%= f.text_field :contact_person %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<% if @course.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+	<ul>
+		<% @course.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
 <% end %>
+
+<%= label_tag "Departments"%>
+
+<%= f.collection_select(:department_id, Department.all, :id, :name,{}) %>
+<div class="field">
+	<%= f.label :name %>
+	<br />
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :code %>
+	<br />
+	<%= f.text_field :code %>
+</div>
+<div class="field">
+	<%= f.label :description %>
+	<br />
+	<%= f.text_area :description %>
+</div>
+<div class="field">
+	<%= f.label :number_of_years %>
+	<br />
+	<%= f.collection_select(:course_duration_id, CourseDuration.all, :id, :no_of_years,{}) %>
+</div>
+<div class="field">
+	<%= f.label :semester_pattern %>
+	<br />
+	<%= f.collection_select(:semester_pattern_id, SemesterPattern.all, :id, :no_of_semesters,{}) %>
+</div>
+<div class="field">
+	<%= f.label :contact_person %>
+	<br />
+	<%#= f.collection_select(:semester_pattern_id, SemesterPattern.all, :id, :no_of_semesters,{}) %>
+</div>
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %> 

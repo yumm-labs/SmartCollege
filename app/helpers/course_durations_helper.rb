@@ -1,0 +1,2 @@
+module CourseDurationsHelper
+end

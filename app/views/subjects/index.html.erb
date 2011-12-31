@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+  	<th>Department Name </th>
     <th>Name</th>
     <th>Code</th>
     <th>Description</th>
@@ -14,11 +15,12 @@
 
 <% @subjects.each do |subject| %>
   <tr>
+  	<td><%= subject.department.name%><td>
     <td><%= subject.name %></td>
     <td><%= subject.code %></td>
     <td><%= subject.description %></td>
     <td><%= subject.contact_person %></td>
-    <td><%= subject.department %></td>
+    <td><%#= subject.department %></td>
     <td><%= link_to 'Show', subject %></td>
     <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
     <td><%= link_to 'Destroy', subject, confirm: 'Are you sure?', method: :delete %></td>

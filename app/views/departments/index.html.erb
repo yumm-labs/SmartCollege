@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+  	<th>Institute Name </th>
     <th>Name</th>
     <th>Code</th>
     <th>Description</th>
@@ -15,6 +16,7 @@
 
 <% @departments.each do |department| %>
   <tr>
+  	<td><%= department.institute.name%>
     <td><%= department.name %></td>
     <td><%= department.code %></td>
     <td><%= department.description %></td>

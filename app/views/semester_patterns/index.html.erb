@@ -1,0 +1,27 @@
+<h1>Listing semester_patterns</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>No of semesters</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @semester_patterns.each do |semester_pattern| %>
+  <tr>
+    <td><%= semester_pattern.name %></td>
+    <td><%= semester_pattern.no_of_semesters %></td>
+    <td><%= semester_pattern.description %></td>
+    <td><%= link_to 'Show', semester_pattern %></td>
+    <td><%= link_to 'Edit', edit_semester_pattern_path(semester_pattern) %></td>
+    <td><%= link_to 'Destroy', semester_pattern, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Semester pattern', new_semester_pattern_path %>

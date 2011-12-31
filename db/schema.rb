@@ -11,49 +11,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222190020) do
+ActiveRecord::Schema.define(:version => 20111230201748) do
 
-  create_table "course_subjects", :force => true do |t|
-    t.integer  "course_id"
-    t.integer  "subject_id"
-    t.integer  "credits"
-    t.string   "specific_code"
-    t.integer  "year"
-    t.integer  "semester"
-    t.integer  "staff_id"
-    t.integer  "subject_category_id"
+  create_table "course_durations", :force => true do |t|
+    t.string   "name"
+    t.integer  "no_of_years"
+    t.integer  "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "course_subjects", ["course_id"], :name => "index_course_subjects_on_course_id"
-  add_index "course_subjects", ["staff_id"], :name => "index_course_subjects_on_staff_id"
-  add_index "course_subjects", ["subject_category_id"], :name => "index_course_subjects_on_subject_category_id"
-  add_index "course_subjects", ["subject_id"], :name => "index_course_subjects_on_subject_id"
+  create_table "course_semesters", :force => true do |t|
+    t.integer  "course_year_id"
+    t.integer  "semester"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "course_subjects", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "course_years", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_years", ["course_id"], :name => "index_course_years_on_course_id"
 
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.string   "code"
     t.text     "description"
-    t.integer  "no_of_years"
     t.integer  "contact_person_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "department_id"
+    t.integer  "semester_pattern_id"
+    t.integer  "course_duration_id"
   end
 
   add_index "courses", ["contact_person_id"], :name => "index_courses_on_contact_person_id"
 
   create_table "department_staffs", :force => true do |t|
-    t.integer  "department_id"
-    t.integer  "staff_id"
-    t.integer  "designation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "department_staffs", ["department_id"], :name => "index_department_staffs_on_department_id"
-  add_index "department_staffs", ["designation_id"], :name => "index_department_staffs_on_designation_id"
-  add_index "department_staffs", ["staff_id"], :name => "index_department_staffs_on_staff_id"
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -64,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20111222190020) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "institute_id"
   end
 
   add_index "departments", ["contact_person_id"], :name => "index_departments_on_contact_person_id"
@@ -94,6 +101,14 @@ ActiveRecord::Schema.define(:version => 20111222190020) do
 
   add_index "institutes", ["address_id"], :name => "index_institutes_on_address_id"
   add_index "institutes", ["contact_person_id"], :name => "index_institutes_on_contact_person_id"
+
+  create_table "semester_patterns", :force => true do |t|
+    t.string   "name"
+    t.integer  "no_of_semesters"
+    t.integer  "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "subject_categories", :force => true do |t|
     t.integer  "name_id"
@@ -150,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20111222190020) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "type"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

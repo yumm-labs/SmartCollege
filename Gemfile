@@ -40,7 +40,8 @@ group :test do
 # Pretty printed test output
   gem 'turn', :require => false
   gem 'cucumber', '~> 1.1.4'
-
+  gem 'shoulda'
+  gem 'minitest'
 # Cucumber - http://jonathanhui.com/ruby-rails-3-testing-cucumber
 # Cucumber & Capypara - http://www.allenwei.cn/cucumber-capybara-what-we-need-for-rails-integration-test/
 # Fork the tests - https://github.com/sporkrb/spork

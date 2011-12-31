@@ -43,8 +43,9 @@ test:
   encoding: unicode
   database: college_test
   pool: 5
-  username: SmartCollege
+  username: postgres
   password:
+
 
 production:
   adapter: postgresql

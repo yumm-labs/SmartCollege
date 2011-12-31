@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @semester_pattern.name %>
+</p>
+
+<p>
+  <b>No of semesters:</b>
+  <%= @semester_pattern.no_of_semesters %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @semester_pattern.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_semester_pattern_path(@semester_pattern) %> |
+<%= link_to 'Back', semester_patterns_path %>

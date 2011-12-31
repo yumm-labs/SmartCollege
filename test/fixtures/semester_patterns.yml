@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  no_of_semesters: 1
+  description: 1
+
+two:
+  name: MyString
+  no_of_semesters: 1
+  description: 1

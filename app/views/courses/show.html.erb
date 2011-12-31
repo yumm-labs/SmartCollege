@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <b> Department Name:</b>
+  <%= @course.department.name %>
+</p>
+
+
 <p>
   <b>Name:</b>
   <%= @course.name %>
@@ -17,8 +24,14 @@
 
 <p>
   <b>No of years:</b>
-  <%= @course.no_of_years %>
+  <%= @course.course_duration.no_of_years %>
 </p>
+
+<p>
+  <b>No of Semesters:</b>
+  <%= @course.semester_pattern.no_of_semesters %>
+</p>
+
 
 <p>
   <b>Contact person:</b>

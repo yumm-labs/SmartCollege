@@ -2,10 +2,12 @@
 
 <table>
   <tr>
+  	<th>Department Name </th>
     <th>Name</th>
     <th>Code</th>
     <th>Description</th>
     <th>No of years</th>
+    <th>No of Semesters </th>
     <th>Contact person</th>
     <th></th>
     <th></th>
@@ -14,10 +16,12 @@
 
 <% @courses.each do |course| %>
   <tr>
+  	<td><%= course.department.name %></td>
     <td><%= course.name %></td>
     <td><%= course.code %></td>
     <td><%= course.description %></td>
-    <td><%= course.no_of_years %></td>
+    <td><%= course.course_duration.no_of_years %></td>
+     <td><%= course.semester_pattern.no_of_semesters %></td>
     <td><%= course.contact_person %></td>
     <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
