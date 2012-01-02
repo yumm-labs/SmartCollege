@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> edge </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  
+  <%= stylesheet_link_tag "default_template" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+ <body>
+  
+  <%= render '/layouts/frozen_top' %>
+  
+  <div id="wrapper_parent"> <!--wrapper_parent start-->
+
+      <div id="wrapper"> <!--wrapper start-->
+
+          <%= render '/layouts/wrapper_header' %>
+          <%= render '/layouts/wrapper_container' %>
+          <%= render '/layouts/wrapper_footer' %>
+
+      </div> <!--wrapper end-->
+
+  </div> <!--wrapper_parent end-->
+
+ </body>
+</html>

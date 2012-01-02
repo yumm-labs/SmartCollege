@@ -1,0 +1,29 @@
+<h1>Listing states</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Remarks</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @states.each do |state| %>
+  <tr>
+    <td><%= state.name %></td>
+    <td><%= state.country.name %></td>
+    <td><%= state.remarks %></td>
+    <td><%= state.status %></td>
+    <td><%= link_to 'Show', state %></td>
+    <td><%= link_to 'Edit', edit_state_path(state) %></td>
+    <td><%= link_to 'Destroy', state, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New State', new_state_path %>

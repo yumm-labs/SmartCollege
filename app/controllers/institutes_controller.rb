@@ -1,10 +1,13 @@
 class InstitutesController < ApplicationController
+  
+  layout 'app_layout'
+  
   # GET /institutes
   # GET /institutes.json
   def index
     @institutes = Institute.all
     @institute ||= Institute.new
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @institutes }
@@ -41,6 +44,7 @@ class InstitutesController < ApplicationController
   # POST /institutes
   # POST /institutes.json
   def create
+    debugger
     @institute = Institute.new(params[:institute])
 
     respond_to do |format|

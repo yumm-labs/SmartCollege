@@ -31,14 +31,22 @@
     = f.label :logo
     %br/
     = f.text_field :logo
-  .field
-    = f.label :address
+
+  
+  = f.fields_for :address_attrs, ( @institute.address ||= Address.new ) do |address|
+    .field
+      = f.label :line1
+      = address.text_field :line1
     %br/
-    =# f.text_field :address
+    .field
+      = f.label :line2
+      = address.text_field :line2
+
   .field
     = f.label :contact_person
     %br/
-    =# f.text_field :contact_person
+    = f.collection_select :contact_person_id, Staff.all, :id, :first_name    
+
   .field
     = f.label :email
     %br/

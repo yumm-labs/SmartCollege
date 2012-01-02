@@ -8,8 +8,4 @@ class InstituteTest < ActiveSupport::TestCase
     assert_equal 'John Doe', "John"
   end
 
-# test "the truth" do
-# # assert true
-# end
-
 end

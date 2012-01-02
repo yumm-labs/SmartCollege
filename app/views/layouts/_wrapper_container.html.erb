@@ -1,0 +1,13 @@
+<!--wrapper_container start-->
+<div id="wrapper_container">
+	<%= content_tag( :p, link_to( 'Logout', logout_url ) ) if user_signed_in? %>
+	<%= collection_select(:institute, :id, Institute.all, :id, :name, {}) if user_signed_in? %>
+	<p class="notice">
+		<%= notice %>
+	</p>
+	<p class="alert">
+		<%= alert %>
+	</p>
+	<%= yield %>
+</div>
+<!--wrapper_container end-->

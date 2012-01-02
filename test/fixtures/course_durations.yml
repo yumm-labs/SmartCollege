@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  no_of_years: 1
-  description: 1
+course_duration_2:
+  name: 3 year
+  no_of_years: 3
+  description: nothing
 
-two:
-  name: MyString
-  no_of_years: 1
-  description: 1

@@ -11,7 +11,43 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230201748) do
+ActiveRecord::Schema.define(:version => 20111231113001) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "addressable_type"
+    t.integer  "addressable_id"
+    t.string   "line1"
+    t.string   "line2"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "country_id"
+    t.integer  "zip_code"
+    t.string   "mobile_no"
+    t.string   "residential_phone_no"
+    t.string   "address_type"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.string   "remarks"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["state_id"], :name => "index_cities_on_state_id"
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "remarks"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "course_durations", :force => true do |t|
     t.string   "name"
@@ -109,6 +145,17 @@ ActiveRecord::Schema.define(:version => 20111230201748) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.string   "remarks"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "states", ["country_id"], :name => "index_states_on_country_id"
 
   create_table "subject_categories", :force => true do |t|
     t.integer  "name_id"

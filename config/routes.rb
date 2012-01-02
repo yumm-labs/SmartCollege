@@ -1,5 +1,11 @@
 SmartCollege::Application.routes.draw do
 
+  resources :cities
+
+  resources :states
+
+  resources :countries
+
   resources :semester_patterns
 
   resources :course_durations

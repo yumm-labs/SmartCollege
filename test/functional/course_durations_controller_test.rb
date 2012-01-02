@@ -1,6 +1,6 @@
-require 'test_helper'
-
-class CourseDurationsControllerTest < ActionController::TestCase
+# require 'test_helper'
+# 
+# class CourseDurationsControllerTest < ActionController::TestCase
   # setup do
     # @course_duration = course_durations(:one)
   # end
@@ -46,4 +46,4 @@ class CourseDurationsControllerTest < ActionController::TestCase
 # 
     # assert_redirected_to course_durations_path
   # end
-end
+# end
