@@ -1,7 +1,5 @@
 class InstitutesController < ApplicationController
-  
-  layout 'app_layout'
-  
+
   # GET /institutes
   # GET /institutes.json
   def index
@@ -25,17 +23,6 @@ class InstitutesController < ApplicationController
     end
   end
 
-  # # GET /institutes/new
-  # # GET /institutes/new.json
-  # def new
-    # @institute = Institute.new
-# 
-    # respond_to do |format|
-      # format.html # new.html.erb
-      # format.json { render json: @institute }
-    # end
-  # end
-
   # GET /institutes/1/edit
   def edit
     @institute = Institute.find(params[:id])
@@ -44,12 +31,11 @@ class InstitutesController < ApplicationController
   # POST /institutes
   # POST /institutes.json
   def create
-    debugger
     @institute = Institute.new(params[:institute])
 
     respond_to do |format|
       if @institute.save
-        format.html { redirect_to institutes_url, notice: 'Institute was successfully created.' }
+        format.html { redirect_to institutes_url, notice: "Institute #{ @institute.name } was successfully created" }
         format.json { render json: institutes_url, status: :created, location: @institute }
       else
         @institutes = Institute.all
@@ -66,7 +52,7 @@ class InstitutesController < ApplicationController
 
     respond_to do |format|
       if @institute.update_attributes(params[:institute])
-        format.html { redirect_to @institute, notice: 'Institute was successfully updated.' }
+        format.html { redirect_to institutes_url, notice: "Institute #{ @institute.name } was successfully updated" }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
+  
   protect_from_forgery
 
-  
+  layout 'app_layout'
+
   before_filter :initialize_institute!
 
   # ======== Devise related method =========
