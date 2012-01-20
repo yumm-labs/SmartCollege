@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
   private
   def current_institute_id
-    session['InstituteID'] ||= user_institutes.first.id
+    session['InstituteID'] ||= ( user_institutes.first and user_institutes.first.id )
   end
 
 end
