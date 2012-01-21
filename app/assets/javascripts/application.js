@@ -8,8 +8,13 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 jQuery(document).ready(function() {
+
+	$('#institute_id').change(function() {
+		alert('Changing institute');
+	});
+
+
 
 	$('#form-updator').hide();
 

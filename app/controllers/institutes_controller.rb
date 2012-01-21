@@ -86,4 +86,11 @@ class InstitutesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def switch_institute
+    @institute = Institute.find( params[:institute_id] )
+    session[:institute_id] = @institute.id
+    redirect_to institutes_url 
+  end
+  
 end

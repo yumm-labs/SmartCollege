@@ -5,7 +5,7 @@ class Institute < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  after_save :save_address
+  after_update :save_address
 
   def address_attrs=(attrs)
     if self.new_record?

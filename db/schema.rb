@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111231113001) do
+ActiveRecord::Schema.define(:version => 20120115181223) do
 
   create_table "addresses", :force => true do |t|
     t.string   "addressable_type"
@@ -119,6 +119,15 @@ ActiveRecord::Schema.define(:version => 20111231113001) do
 
   add_index "designations", ["name_id"], :name => "index_designations_on_name_id"
 
+  create_table "documents", :force => true do |t|
+  end
+
+  create_table "htmls", :force => true do |t|
+  end
+
+  create_table "images", :force => true do |t|
+  end
+
   create_table "institutes", :force => true do |t|
     t.string   "name"
     t.string   "code"
@@ -136,6 +145,44 @@ ActiveRecord::Schema.define(:version => 20111231113001) do
 
   add_index "institutes", ["address_id"], :name => "index_institutes_on_address_id"
   add_index "institutes", ["contact_person_id"], :name => "index_institutes_on_contact_person_id"
+
+  create_table "manual_documents", :force => true do |t|
+    t.text "content"
+  end
+
+  create_table "multimedia", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "url"
+    t.string   "path"
+    t.string   "multimedia_type"
+    t.integer  "multimedia_id"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "multimedia_sharings", :force => true do |t|
+    t.integer  "multimedia_id"
+    t.text     "description"
+    t.integer  "share_with_type"
+    t.integer  "share_with_id"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "multimedia_tags", :force => true do |t|
+    t.integer  "multimedia_id"
+    t.integer  "tag_with_type"
+    t.integer  "tag_with_id"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "semester_patterns", :force => true do |t|
     t.string   "name"
@@ -217,5 +264,11 @@ ActiveRecord::Schema.define(:version => 20111231113001) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+  end
+
+  create_table "wikis", :force => true do |t|
+  end
 
 end
