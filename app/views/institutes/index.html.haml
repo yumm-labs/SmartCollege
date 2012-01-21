@@ -3,43 +3,34 @@
   %tr
     %th Name
     %th Code
-    %th Description
-    %th Grade
-    %th Caption
-    %th Logo
-    %th Address
-    %th Contact person
-    %th Email
+    %th Location
+    %th Principal
     %th Phone
-    %th
-    %th
     %th
   - @institutes.each do |institute|
     %tr
       %td= institute.name
       %td= institute.code
-      %td= institute.description
-      %td= institute.grade
-      %td= institute.caption
-      %td= institute.logo
-      %td= institute.address
-      %td= institute.contact_person
-      %td= institute.email
+      %td
+        - city = ( institute.address and institute.address.city )
+        =( city and city.name )  
+      %td= institute.contact_person.name if institute.contact_person 
       %td= institute.phone
-      %td= link_to 'Show', institute
-      %td= link_to 'Edit', edit_institute_path(institute)
+      %td= link_to 'Edit', edit_institute_path(institute), :remote => true, :class => 'edit-link'
       %td= link_to 'Destroy', institute, confirm: 'Are you sure?', method: :delete
 %br/
 
-#js-button New Institute
-
-#new-institute
+%div= link_to 'New Institute', new_institute_path, :remote => true, :class => 'new-link'
+  
+#form-updator
   = render :partial => 'form'
-
+  
 - if @institute.errors.any?
   :javascript
     jQuery(document).ready(function() {
-      $('#new-institute').show();
+      $('#form-updator').show();
     });
+    
+    
   
 

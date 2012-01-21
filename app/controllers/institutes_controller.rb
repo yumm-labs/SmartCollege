@@ -1,5 +1,4 @@
 class InstitutesController < ApplicationController
-
   # GET /institutes
   # GET /institutes.json
   def index
@@ -12,20 +11,34 @@ class InstitutesController < ApplicationController
     end
   end
 
+  # GET /institutes/new
+  def new
+    @institute = Institute.new
+
+    respond_to do |format|
+      format.js { render :layout => false }
+    end
+  end
+
   # GET /institutes/1
   # GET /institutes/1.json
   def show
     @institute = Institute.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @institute }
-    end
+    redirect_to institutes_url
+#     
+    # respond_to do |format|
+      # format.html # show.html.erb
+      # format.json { render json: @institute }
+    # end
   end
 
   # GET /institutes/1/edit
   def edit
     @institute = Institute.find(params[:id])
+
+    respond_to do |format|
+      format.js { render :layout => false }
+    end
   end
 
   # POST /institutes
@@ -55,7 +68,8 @@ class InstitutesController < ApplicationController
         format.html { redirect_to institutes_url, notice: "Institute #{ @institute.name } was successfully updated" }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        @institutes = Institute.all
+        format.html { render :action=>:index }
         format.json { render json: @institute.errors, status: :unprocessable_entity }
       end
     end

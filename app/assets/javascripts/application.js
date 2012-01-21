@@ -9,3 +9,17 @@
 //= require_tree .
 
 
+jQuery(document).ready(function() {
+
+	$('#form-updator').hide();
+
+	$('#js-button').click(function() {
+		$('#form-updator').slideToggle('slow');
+	});
+
+
+	$('.new-link, .edit-link').bind("ajax:complete", function(et, e) {
+		$("#form-updator").html(e.responseText);
+		$("#form-updator").show();
+	});
+});
