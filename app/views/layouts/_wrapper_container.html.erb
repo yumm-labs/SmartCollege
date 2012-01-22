@@ -1,7 +1,12 @@
 <!--wrapper_container start-->
 <div id="wrapper_container">
 	<%= content_tag( :p, link_to( 'Logout', logout_url ) ) if user_signed_in? %>
-	<%= collection_select(:institute, :id, Institute.all, :id, :name, {}) if user_signed_in? %>
+
+	<% if user_signed_in? %>
+	<%= form_tag change_institute_path do -%>
+	<%= collection_select(:institute, :id, Institute.all, :id, :name, { :selected => current_institute.id }) %>
+	<% end -%>
+	<% end -%>
 	<p class="notice">
 		<%= notice %>
 	</p>

@@ -25,11 +25,11 @@ class InstitutesController < ApplicationController
   def show
     @institute = Institute.find(params[:id])
     redirect_to institutes_url
-#     
-    # respond_to do |format|
-      # format.html # show.html.erb
-      # format.json { render json: @institute }
-    # end
+  #
+  # respond_to do |format|
+  # format.html # show.html.erb
+  # format.json { render json: @institute }
+  # end
   end
 
   # GET /institutes/1/edit
@@ -86,11 +86,11 @@ class InstitutesController < ApplicationController
       format.json { head :ok }
     end
   end
-  
-  def switch_institute
-    @institute = Institute.find( params[:institute_id] )
-    session[:institute_id] = @institute.id
-    redirect_to institutes_url 
+
+  def change_institute
+    @institute = Institute.find( params[:institute][:id] )
+    set_institute_in_session( @institute.id )
+    redirect_to institutes_url
   end
-  
+
 end

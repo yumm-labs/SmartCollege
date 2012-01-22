@@ -31,6 +31,8 @@ gem 'jquery-rails'
 
 group :development do
 # To use debugger
+  gem 'ruby_core_source'
+  gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'hpricot'
   gem 'ruby_parser'

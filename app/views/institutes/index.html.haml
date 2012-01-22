@@ -14,7 +14,7 @@
       %td
         - city = ( institute.address and institute.address.city )
         =( city and city.name )  
-      %td= institute.contact_person.name if institute.contact_person 
+      %td= institute.contact_person.first_name if institute.contact_person 
       %td= institute.phone
       %td= link_to 'Edit', edit_institute_path(institute), :remote => true, :class => 'edit-link'
       %td= link_to 'Destroy', institute, confirm: 'Are you sure?', method: :delete

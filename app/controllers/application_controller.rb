@@ -3,8 +3,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   layout 'app_layout'
-
+  
   before_filter :initialize_institute!
+
+  helper_method :current_institute
 
   # ======== Devise related method =========
   # default redirect to is "/users/sign_in"
@@ -22,7 +24,11 @@ class ApplicationController < ActionController::Base
   end
   
   def current_institute
-    Institute.find( current_institute_id )
+    @current_institute = Institute.find( current_institute_id )
+  end
+
+  def set_institute_in_session( session_id )
+    session[:InstituteID] = session_id
   end
 
   private

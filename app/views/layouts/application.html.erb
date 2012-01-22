@@ -7,8 +7,13 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
+
 		<%= content_tag( :p, link_to( 'Logout', logout_url ) ) if user_signed_in? %>
-		<%= collection_select(:institute, :id, Institute.all, :id, :name, {}) if user_signed_in? %>
+
+		<%= form_tag change_institute_url do -%>
+			<%= collection_select(:institute, :id, Institute.all, :id, :name, {}) if user_signed_in? %>
+		<% end -%>
+		
 		<p class="notice">
 			<%= notice %>
 		</p>

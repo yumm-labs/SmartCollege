@@ -22,6 +22,7 @@ SmartCollege::Application.routes.draw do
   resources :designations
 
   resources :institutes
+  match 'institutes/change_institute' => 'institutes#change_institute', :as => :change_institute
 
   resources :departments
 
